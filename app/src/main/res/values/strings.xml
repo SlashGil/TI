@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TI</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="FAQ">FAQ</string>
+    <string name="KnowMaster">Maestros</string>
+    <string name="KnowGroups">Grupos</string>
+    <string name="tarjeta2">Ejemplo</string>
+</resources>
