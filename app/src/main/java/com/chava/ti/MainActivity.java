@@ -1,10 +1,14 @@
 package com.chava.ti;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,11 +25,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView imageView;
     CardView cardView;
     Button uno, dos, tres;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtWelcome = findViewById(R.id.txtBienvenido);
         carouselView = findViewById(R.id.carouselView);
         carouselView.setPageCount(fotos.length);
         carouselView.setImageListener(imageListener);
@@ -35,6 +39,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         uno.setOnClickListener(this);
         dos.setOnClickListener(this);
         tres.setOnClickListener(this);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.Login){
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
 
     ImageListener imageListener = new ImageListener() {

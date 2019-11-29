@@ -5,4 +5,9 @@
     <string name="KnowMaster">Maestros</string>
     <string name="KnowGroups">Grupos</string>
     <string name="tarjeta2">Ejemplo</string>
+    <string name="Bienvenido">Bienvenido</string>
+    <string name="SignUp">Registrar</string>
+    <string name="SignIn">Acceder</string>
+    <string name="Correo">Correo</string>
+    <string name="Contraseña">Contraseña</string>
 </resources>

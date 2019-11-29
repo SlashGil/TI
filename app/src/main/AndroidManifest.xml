@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.chava.ti">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".grupos"></activity>
+        <activity android:name=".Welcome"/>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".grupos" />
         <activity android:name=".claustro" />
         <activity android:name=".faq" />
         <activity android:name=".MainActivity">
