@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "377144245960",
+    "firebase_url": "https://fti-upaep.firebaseio.com",
+    "project_id": "fti-upaep",
+    "storage_bucket": "fti-upaep.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377144245960:android:4d18d611b9634ea0892ffd",
+        "android_client_info": {
+          "package_name": "com.chava.ti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377144245960-nupe0h0kjpvke7r7aqngfogdb60m32es.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chava.ti",
+            "certificate_hash": "4084ce015c11e4ed6022400cbfd5d44aecff609f"
+          }
+        },
+        {
+          "client_id": "377144245960-fctrfpkeer3e57m57vgbl35n2tbenkmt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEBrvI6wDatzGsI5XqhTModGGh7Xm3UHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377144245960-fctrfpkeer3e57m57vgbl35n2tbenkmt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
