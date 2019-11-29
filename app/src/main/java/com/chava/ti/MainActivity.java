@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,14 +19,13 @@ import android.widget.TextView;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import Fragments.InicioFragment;
+
+public class MainActivity extends AppCompatActivity  implements InicioFragment.OnFragmentInteractionListener{
 
     int[] fotos= {R.drawable.uno,R.drawable.dos,R.drawable.tres};
-    TextView txtWelcome;
     CarouselView carouselView;
-    ImageView imageView;
-    CardView cardView;
-    Button uno, dos, tres;
+   Fragment fragmentInicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         carouselView = findViewById(R.id.carouselView);
         carouselView.setPageCount(fotos.length);
         carouselView.setImageListener(imageListener);
-        uno = findViewById(R.id.faq);
-        dos = findViewById(R.id.m);
-        tres = findViewById(R.id.g);
-        uno.setOnClickListener(this);
-        dos.setOnClickListener(this);
-        tres.setOnClickListener(this);
 
+        fragmentInicio = new InicioFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.containerFragment,fragmentInicio).commit();
     }
 
     @Override
@@ -65,19 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     @Override
-    public void onClick(View v) {
-        if(v.getId() == uno.getId()){
-            Intent faq = new Intent(v.getContext(),faq.class);
-            startActivity(faq);
-        }
-        if(v.getId() == dos.getId()){
-            Intent maestros = new Intent(v.getContext(), claustro.class);
-            startActivity(maestros);
-        }
-        if(v.getId() == tres.getId()){
-            Intent grupos = new Intent(v.getContext(), grupos.class);
-            startActivity(grupos);
-        }
+    public void onFragmentInteraction(Uri uri) {
 
     }
 }
