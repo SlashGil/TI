@@ -10,7 +10,12 @@
     <string name="SignIn">Acceder</string>
     <string name="Correo">Correo</string>
     <string name="Contraseña">Contraseña</string>
+    <string name="signed_out">Sin acceder</string>
+    <string name="google_status_fmt">Google User: %s</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Out">Salir</string>
 </resources>

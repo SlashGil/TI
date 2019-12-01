@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Welcome"/>
+        <activity android:name=".InstaActivity"></activity>
+        <activity android:name=".FbActivity" />
+        <activity android:name=".Welcome" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".grupos" />
         <activity android:name=".claustro" />

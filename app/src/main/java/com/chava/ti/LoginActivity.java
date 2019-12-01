@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,12 +19,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG = "EmailPassword";
-    Button btnSignUp, btnSignIn;
-    TextView txtWelcome;
+    Button btnSignUp, btnSignIn, btnSignOut;
+    TextView txtWelcome,txtDetail, txtStatus;
     EditText edtUser, edtPass;
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
@@ -44,6 +46,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnSignUp.setOnClickListener(this);
         btnSignIn.setOnClickListener(this);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+
     private void registerUser() {
         String mail = edtUser.getText().toString().trim();
         String pass = edtPass.getText().toString().trim();
@@ -102,10 +113,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Intent intent = new Intent(getApplication(), Welcome.class);
                             intent.putExtra(Welcome.USER, user);
                             startActivity(intent);
+
                         }
                         progressDialog.dismiss();
                     }
                 });
+    }
+    private void updateUI(FirebaseUser user) {
+        progressDialog.hide();
+        if (user != null) {
+
+            txtStatus.setText(getString(R.string.google_status_fmt, user.getEmail()));
+            txtDetail.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+
+            findViewById(R.id.btnSignUp).setVisibility(View.GONE);
+            findViewById(R.id.btnSignIn).setVisibility(View.GONE);
+            findViewById(R.id.btnSignOut).setVisibility(View.VISIBLE);
+        } else {
+            txtStatus.setText(R.string.signed_out);
+            txtDetail.setText(null);
+
+            findViewById(R.id.btnSignIn).setVisibility(View.VISIBLE);
+            findViewById(R.id.btnSignUp).setVisibility(View.VISIBLE);
+            findViewById(R.id.btnSignOut).setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -117,7 +148,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnSignIn:
                 login();
                 break;
+            case R.id.btnSignOut:
+                signOut();
+                break;
         }
         registerUser();
     }
+    private void signOut() {
+        mAuth.signOut();
+        updateUI(null);
+    }
+
 }
