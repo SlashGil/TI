@@ -1,4 +1,4 @@
-package com.chava.ti;
+package com.chava.ti.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,14 +8,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class grupos extends AppCompatActivity {
+import com.chava.ti.R;
+
+public class claustro extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grupos);
+        setContentView(R.layout.activity_claustro);
     }
-
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.Login){
             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);

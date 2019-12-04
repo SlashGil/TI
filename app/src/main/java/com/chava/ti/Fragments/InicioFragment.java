@@ -1,9 +1,11 @@
-package Fragments;
+package com.chava.ti.Fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.chava.ti.R;
+import com.chava.ti.interfaces.IComunicateFragments;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +34,10 @@ public class InicioFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-
+    public CardView card1, card2,card3,card4,card5,card6;
+    public IComunicateFragments iComunicateFragments;
+    public Activity activity;
+    View view;
     public InicioFragment() {
         // Required empty public constructor
     }
@@ -67,7 +73,55 @@ public class InicioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+        view = inflater.inflate(R.layout.fragment_inicio, container, false);
+        card1 = view.findViewById(R.id.card1);
+        card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    iComunicateFragments.launchFaq();
+            }
+        });
+
+        card2 = view.findViewById(R.id.card2);
+        card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iComunicateFragments.launchVersus();
+            }
+        });
+
+        card3= view.findViewById(R.id.card3);
+        card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iComunicateFragments.launchClaustro();
+            }
+        });
+
+        card4 = view.findViewById(R.id.card4);
+        card4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iComunicateFragments.launchGroups();
+            }
+        });
+
+        card5 = view.findViewById(R.id.card5);
+        card5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iComunicateFragments.launchFacebook();
+            }
+        });
+
+        card6 = view.findViewById(R.id.card6);
+        card6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iComunicateFragments.launchInsta();
+            }
+        });
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -80,6 +134,11 @@ public class InicioFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        if (context instanceof Activity) {
+            activity = (Activity) context;
+            iComunicateFragments= (IComunicateFragments) activity;
+
+        }
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -102,7 +161,7 @@ public class InicioFragment extends Fragment {
      * <p>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
+     * >Communicating with Other com.chava.ti.Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name

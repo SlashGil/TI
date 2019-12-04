@@ -1,4 +1,4 @@
-package com.chava.ti;
+package com.chava.ti.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.chava.ti.R;
+
 public class InstaActivity extends AppCompatActivity {
     WebView browser;
 
@@ -14,7 +16,7 @@ public class InstaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insta);
-        browser = (WebView) findViewById(R.id.Webpage);
+        browser = (WebView) findViewById(R.id.webpage);
         browser.getSettings().setJavaScriptEnabled(true);
         browser.getSettings().setDisplayZoomControls(false);
         browser.setWebViewClient(new WebViewClient() {

@@ -1,4 +1,4 @@
-package com.chava.ti;
+package com.chava.ti.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+
+import com.chava.ti.R;
 
 public class FbActivity extends AppCompatActivity {
     private WebView browser;
