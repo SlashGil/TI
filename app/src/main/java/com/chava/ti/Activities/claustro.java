@@ -32,6 +32,7 @@ public class claustro extends AppCompatActivity {
         rv.setLayoutManager(new GridLayoutManager(this,5));
         rv.setAdapter(adapter);
     }
+
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.Login){
             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);

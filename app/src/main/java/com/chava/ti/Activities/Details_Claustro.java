@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -13,7 +14,7 @@ import com.chava.ti.R;
 
 import org.w3c.dom.Text;
 
-public class Details_Claustro extends AppCompatActivity {
+public class Details_Claustro extends AppCompatActivity implements View.OnClickListener{
     private TextView txtName, txtLastName, txtArea, txtMail;
     private ImageView photo;
     private ImageButton mail;
@@ -28,6 +29,7 @@ public class Details_Claustro extends AppCompatActivity {
         txtArea = (TextView) findViewById(R.id.area_claustro);
         txtMail = (TextView) findViewById(R.id.mailclaustro);
         mail = (ImageButton)findViewById(R.id.btnMail);
+        mail.setOnClickListener(this);
 
         Intent intent = getIntent();
         String Name = intent.getExtras().getString("Name");
@@ -41,5 +43,11 @@ public class Details_Claustro extends AppCompatActivity {
         txtArea.setText(Area);
         txtMail.setText(Mail);
         photo.setImageResource(Photo);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getApplicationContext(),Mail.class);
+        startActivity(intent);
     }
 }
