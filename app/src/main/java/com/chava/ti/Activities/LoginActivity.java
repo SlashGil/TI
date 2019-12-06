@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        txtWelcome = findViewById(R.id.txtBienvenido);
+        txtWelcome = findViewById(R.id.txtWelcome);
         edtUser = findViewById(R.id.edtUser);
         edtPass = findViewById(R.id.edtPass);
         btnSignUp = findViewById(R.id.btnSignUp);

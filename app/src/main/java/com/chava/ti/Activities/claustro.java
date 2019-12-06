@@ -29,7 +29,7 @@ public class claustro extends AppCompatActivity {
         initData();
         rv = (RecyclerView) findViewById(R.id.rv);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,teacherList);
-        rv.setLayoutManager(new GridLayoutManager(this,5));
+        rv.setLayoutManager(new GridLayoutManager(this,3));
         rv.setAdapter(adapter);
     }
 

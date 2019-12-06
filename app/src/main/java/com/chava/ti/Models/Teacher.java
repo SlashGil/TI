@@ -6,6 +6,7 @@ public class Teacher {
     private String area;
     private String mail;
     private int photo;
+    private int id;
 
     public Teacher(){
 
@@ -17,6 +18,7 @@ public class Teacher {
         this.area = area;
         this.mail = mail;
         this.photo = photo;
+        this.id = id;
     }
 
     public Teacher(String name, String lastName, String area, String mail) {

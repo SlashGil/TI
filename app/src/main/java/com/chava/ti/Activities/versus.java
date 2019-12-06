@@ -41,4 +41,20 @@ public class versus extends AppCompatActivity {
             imageView.setImageResource(fotos[position]);
         }
     };
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        int mode = this.getResources().getConfiguration().orientation;
+        if(mode == Configuration.ORIENTATION_LANDSCAPE)
+            carouselView.setImageListener(null);
+    }
+
+    @Override
+    protected void onResume() {
+        int mode = this.getResources().getConfiguration().orientation;
+        super.onResume();
+        if(mode == Configuration.ORIENTATION_LANDSCAPE)
+            carouselView.setImageListener(imageListener);
+    }
 }
