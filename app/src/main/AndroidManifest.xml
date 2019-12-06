@@ -11,12 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Welcome"/>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".grupos" />
-        <activity android:name=".claustro" />
-        <activity android:name=".faq" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.Details_Student"></activity>
+        <activity android:name=".Activities.Mail" />
+        <activity android:name=".Activities.Details_Claustro" />
+        <activity android:name=".Activities.versus" />
+        <activity android:name=".Activities.InstaActivity" />
+        <activity android:name=".Activities.FbActivity" />
+        <activity android:name=".Activities.Welcome" />
+        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.grupos" />
+        <activity android:name=".Activities.claustro" />
+        <activity android:name=".Activities.faq" />
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

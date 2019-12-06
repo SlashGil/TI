@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Details_Claustro"
+    android:orientation="vertical"
+    android:padding="15dp">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/photo_claustro"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_claustro"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:textAlignment="center"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastname_claustro"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:textAlignment="center"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/area_claustro"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:textAlignment="center"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mailclaustro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:textAlignment="center"/>
+
+    <ImageButton
+        android:id="@+id/btnMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:background="#00FFFFFF"
+        android:padding="8dp"
+        android:src="@drawable/paper" />
+</LinearLayout>

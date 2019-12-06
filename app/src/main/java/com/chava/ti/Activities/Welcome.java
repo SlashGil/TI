@@ -1,4 +1,4 @@
-package com.chava.ti;
+package com.chava.ti.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
+
+import com.chava.ti.R;
 
 public class Welcome extends AppCompatActivity {
     private static final int TIME=2000;

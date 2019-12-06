@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/Login"
-        android:title="Log In"
-        android:icon="@drawable/login"
+    <item
+        android:id="@+id/Login"
+        android:icon="@drawable/profile"
         android:orderInCategory="100"
+        android:title="@string/SignIn"
         app:showAsAction="ifRoom" />
 </menu>
