@@ -11,3 +11,4 @@ Versus Tab
 Versus Tab is for try to encourage the differences between Software Engineering and Computer Engineering
 
 Also the Principal Activity has a Carousel containing the most recent photos of IT Faculty events.
+
