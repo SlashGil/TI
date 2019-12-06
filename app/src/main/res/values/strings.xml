@@ -15,45 +15,34 @@
     <string name="firebase_status_fmt">Firebase User: %s</string>
 
 
-    <string name="grupo1">Grupo 1</string>
-    <string name="grupo2">Grupo 2</string>
-    <string name="grupo3">Grupo 3</string>
-    <string name="grupo4">Grupo 4</string>
-    <string name="grupo5">Grupo 5</string>
-
+    <string name="grupo1">¿Dónde se encuentran los profesores de la facultad?</string>
+    <string name="grupo2">¿A quién debo acudir para consultar asuntos acerca de la facultad?</string>
+    <string name="grupo3">¿Cuáles carreras comprende la Facultad de Tecnologías de Información?</string>
+    <string name="grupo4">¿Dónde puedo consultar mi Plan de Estudios?</string>
+    <string name="grupo5">¿Qué actividades extracurriculares se realizan en la facultad?</string>
+    <string name="grupo6">¿Cómo puedo involucrarme más en la facultad?</string>
     <string-array name="grupo1">
-        <item>item1</item>
-        <item>item2</item>
+        <item>Puedes encontrar a los profesores de tiempo completo en el Pool de Ingenierías ubicado en el segundo piso del Edificio de Idiomas.</item>
     </string-array>
 
     <string-array name="grupo2">
-        <item>item1</item>
-        <item>item2</item>
+        <item>Puedes acudir con la Dra. Laura Margarita Rodríguez Peralta, directora de la Facultad de Tecnologías de Información.</item>
     </string-array>
 
     <string-array name="grupo3">
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
+        <item>Ingeniería en Computación y Sistemas e Ingeniería de Software.</item>
     </string-array>
 
     <string-array name="grupo4">
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
+        <item>Puedes conocer tu plan de estudios a través de la plataforma de Unisoft. Para acceder a ella deberás contar con tu usuario (ID) y contraseña (asignada).</item>
     </string-array>
 
     <string-array name="grupo5">
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
-        <item>item5</item>
+        <item>La facultad de TI realiza conferencias, talleres y workshops a lo largo del ciclo escolar. ¡No te los pierdas!</item>
     </string-array>
 
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="grupo6">
+        <item>Acudiendo a las actividades que ofrece, así como participando en Mesas Directivas o en el Consejo Universitario.</item>
+    </string-array>
     <string name="Out">Salir</string>
 </resources>

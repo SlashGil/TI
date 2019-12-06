@@ -8,13 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.chava.ti.R;
 
 public class Mail extends AppCompatActivity implements View.OnClickListener {
     EditText edtPara, edtDe, edtAsunto, edtTexto;
-    Button Send;
+    ImageButton Send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -39,6 +39,7 @@ public class faq extends AppCompatActivity {
         listGroup.add(getString(R.string.grupo3));
         listGroup.add(getString(R.string.grupo4));
         listGroup.add(getString(R.string.grupo5));
+        listGroup.add(getString(R.string.grupo6));
 
         String[] array;
 
@@ -71,13 +72,17 @@ public class faq extends AppCompatActivity {
         for (String item : array){
             list5.add(item);
         }
-
+        List<String> list6 = new ArrayList<>();
+        array = getResources().getStringArray(R.array.grupo6);
+        for(String item: array){
+            list6.add(item);
+        }
         listItem.put(listGroup.get(0), list1);
         listItem.put(listGroup.get(1), list2);
         listItem.put(listGroup.get(2), list3);
         listItem.put(listGroup.get(3), list4);
         listItem.put(listGroup.get(4), list5);
-
+        listItem.put(listGroup.get(5),list6);
         adapter.notifyDataSetChanged();
     }
 
