@@ -1,7 +1,13 @@
 # TI
-Information app for IT Faculty from UPAEP\n
-This version contains:\n
-\tCarousel View\n
-\tCardView as Button for interaction with App\n
-\tLogin Form useful with integration of Firebase\n
-In the next days I will improve more this App until the last last version.
+Information App for IT Faculty of UPAEP
+This app has 6 tabs
+FAQ Tab
+Groups Tab
+Teachers Tab
+Facebook Tab
+Instagram Tab
+Versus Tab
+
+Versus Tab is for try to encourage the differences between Software Engineering and Computer Engineering
+
+Also the Principal Activity has a Carousel containing the most recent photos of IT Faculty events.
