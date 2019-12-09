@@ -6,8 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.faq" >
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <ExpandableListView
+        android:id="@+id/expandable_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/expandable_list"/>
+        android:layout_height="725dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="0dp" />
 </RelativeLayout>

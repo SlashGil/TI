@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.FbActivity">
-
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
     <WebView
         android:id="@+id/Webpage"
-        android:layout_width="390dp"
+        android:layout_width="match_parent"
         android:layout_height="804dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

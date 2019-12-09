@@ -2,12 +2,15 @@ package com.chava.ti.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 
 import com.chava.ti.Adapters.faqAdapter;
 import com.chava.ti.R;
@@ -16,11 +19,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class faq extends AppCompatActivity {
+public class faq extends AppCompatActivity implements View.OnClickListener{
     ExpandableListView expandableListView;
     List<String> listGroup;
     HashMap<String, List<String>> listItem;
     faqAdapter adapter;
+    Toolbar toolbar;
+    ImageView home, upaep, login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,14 @@ public class faq extends AppCompatActivity {
         listGroup = new ArrayList<>();
         listItem = new HashMap<>();
         adapter = new faqAdapter(this,listGroup,listItem);
+        toolbar = findViewById(R.id.toolbar);
+        home = toolbar.findViewById(R.id.home);
+        upaep = toolbar.findViewById(R.id.upaep);
+        login = toolbar.findViewById(R.id.login_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        home.setOnClickListener(this);
+        login.setOnClickListener(this);
         expandableListView.setAdapter(adapter);
         initListData();
     }
@@ -86,17 +99,18 @@ public class faq extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.Login){
-            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+            case R.id.home: {
+                finish();
+            } break;
+            case R.id.login_toolbar: {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            } break;
+        }
     }
 }

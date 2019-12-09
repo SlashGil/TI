@@ -1,6 +1,7 @@
 package com.chava.ti.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,8 +16,9 @@ import org.w3c.dom.Text;
 
 public class Details_Claustro extends AppCompatActivity implements View.OnClickListener{
     private TextView txtName, txtLastName, txtArea, txtMail;
-    private ImageView photo;
+    private ImageView photo, home, upaep, login;
     private ImageButton mail;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,16 @@ public class Details_Claustro extends AppCompatActivity implements View.OnClickL
         txtArea = (TextView) findViewById(R.id.area_claustro);
         txtMail = (TextView) findViewById(R.id.mailclaustro);
         mail = (ImageButton)findViewById(R.id.btnMail);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         mail.setOnClickListener(this);
+        home = toolbar.findViewById(R.id.home);
+        upaep = toolbar.findViewById(R.id.upaep);
+        login = toolbar.findViewById(R.id.login_toolbar);
+        login.setVisibility(View.GONE);
+
+        home.setOnClickListener(this);
 
         Intent intent = getIntent();
         String Name = intent.getExtras().getString("Name");
@@ -46,8 +57,18 @@ public class Details_Claustro extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getApplicationContext(),Mail.class);
-        intent.putExtra("Para",txtMail.getText().toString());
-        startActivity(intent);
+        int id = v.getId();
+        switch (id){
+            case R.id.btnMail: {
+                Intent intent = new Intent(getApplicationContext(),Mail.class);
+                intent.putExtra("Para",txtMail.getText().toString());
+                startActivity(intent);
+            }
+            break;
+            case R.id.home: {
+                finish();
+            }
+        }
+
     }
 }

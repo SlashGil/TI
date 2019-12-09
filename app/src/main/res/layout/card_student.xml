@@ -24,7 +24,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/StudentName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40sp"
             android:layout_gravity="center"
             android:text="Teacher Name"
             android:textColor="@android:color/black"

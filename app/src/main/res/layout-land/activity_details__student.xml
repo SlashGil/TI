@@ -7,64 +7,76 @@
     android:gravity="center|center_horizontal|center_vertical"
     android:orientation="vertical"
     tools:context=".Activities.Details_Claustro">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/photo_student"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/name_student"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textAlignment="center"
-            android:textSize="20dp" />
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/lastname_student"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textAlignment="center"
-            android:textSize="20dp" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/photo_student"
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/job_Student"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textAlignment="center"
-            android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/mailstudent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textAlignment="center"
-            android:textSize="20dp" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/name_student"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
 
-        <ImageButton
-            android:id="@+id/btnMail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:padding="8dp"
-            android:src="@drawable/paper" />
-    </LinearLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lastname_student"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/job_Student"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mailstudent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <ImageButton
+                    android:id="@+id/btnMail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:padding="8dp"
+                    android:src="@drawable/paper" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

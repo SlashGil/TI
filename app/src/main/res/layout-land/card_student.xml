@@ -16,8 +16,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageStudent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
             android:scaleType="centerCrop" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -27,16 +27,18 @@
             android:layout_gravity="center"
             android:text="Teacher Name"
             android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
-         <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/Job"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Job"
             android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

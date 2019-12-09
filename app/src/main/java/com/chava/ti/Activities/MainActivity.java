@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import androidx.appcompat.widget.Toolbar;
 
 import com.chava.ti.R;
 import com.chava.ti.interfaces.IComunicateFragments;
@@ -25,41 +26,35 @@ import com.chava.ti.Fragments.InicioFragment;
 public class MainActivity extends AppCompatActivity  implements InicioFragment.OnFragmentInteractionListener, IComunicateFragments, View.OnClickListener{
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
-
-    int[] fotos= {R.drawable.foto1,R.drawable.foto2,R.drawable.foto3, R.drawable.foto4};
+    private Toolbar toolbar;
+    int[] fotos = {R.drawable.first1, R.drawable.second, R.drawable.third, R.drawable.fourth1};
     CarouselView carouselView;
    Fragment fragmentInicio;
    FloatingActionButton camera;
+   ImageView home, upaep, login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toolbar = findViewById(R.id.toolbar);
         carouselView = findViewById(R.id.carouselView);
         carouselView.setPageCount(fotos.length);
         carouselView.setImageListener(imageListener);
-
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         camera = findViewById(R.id.camera);
+        home = toolbar.findViewById(R.id.home);
+        upaep = toolbar.findViewById(R.id.upaep);
+        login = toolbar.findViewById(R.id.login_toolbar);
+        home.setVisibility(View.GONE);
         camera.setOnClickListener(this);
+        home.setOnClickListener(this);
+        login.setOnClickListener(this);
         fragmentInicio = new InicioFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.containerFragment,fragmentInicio).commit();
     }
 
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.Login){
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
 
     ImageListener imageListener = new ImageListener() {
         @Override
@@ -115,9 +110,19 @@ public class MainActivity extends AppCompatActivity  implements InicioFragment.O
 
     @Override
     public void onClick(View v) {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(takePictureIntent.resolveActivity(getPackageManager()) != null){
-            startActivityForResult(takePictureIntent,REQUEST_IMAGE_CAPTURE);
+        int id= v.getId();
+        switch (id){
+            case R.id.camera:{
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if(takePictureIntent.resolveActivity(getPackageManager()) != null){
+                    startActivityForResult(takePictureIntent,REQUEST_IMAGE_CAPTURE);
+                }
+            }
+            break;
+            case R.id.login_toolbar:{
+                Intent intent = new Intent(this,LoginActivity.class);
+                startActivity(intent);
+            } break;
         }
     }
 }

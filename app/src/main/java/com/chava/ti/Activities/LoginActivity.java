@@ -2,6 +2,7 @@ package com.chava.ti.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,10 +23,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-
+    private Toolbar toolbar;
     Button btnSignUp, btnSignIn, btnSignOut;
     TextView txtWelcome,txtDetail, txtStatus;
     EditText edtUser, edtPass;
+    ImageView home, upaep, login;
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
 
@@ -32,7 +35,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         txtWelcome = findViewById(R.id.txtWelcome);
         edtUser = findViewById(R.id.edtUser);
         edtPass = findViewById(R.id.edtPass);
@@ -42,10 +46,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         txtStatus = findViewById(R.id.statusTxtView);
         txtDetail = findViewById(R.id.detailTxtView);
         mAuth = FirebaseAuth.getInstance();
-
+        home = toolbar.findViewById(R.id.home);
+        upaep = toolbar.findViewById(R.id.upaep);
+        login = toolbar.findViewById(R.id.login_toolbar);
+        login.setVisibility(View.GONE);
+        btnSignUp.setVisibility(View.GONE);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         progressDialog = new ProgressDialog(this);
-        btnSignUp.setOnClickListener(this);
         btnSignIn.setOnClickListener(this);
+        btnSignOut.setOnClickListener(this);
+        home.setOnClickListener(this);
     }
 
     @Override
@@ -98,9 +108,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_LONG).show();
             return;
         }
-
-        progressDialog.setMessage("Iniciando Login...");
-        progressDialog.show();
+        final ProgressDialog progressDialog1 = new ProgressDialog(this);
+        progressDialog1.setMessage("Iniciando sesion....");
+        progressDialog1.show();
 
         //Login user
         mAuth.signInWithEmailAndPassword(mail, pass)
@@ -116,17 +126,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             startActivity(intent);
 
                         }
-                        progressDialog.dismiss();
+                        progressDialog1.dismiss();
                     }
                 });
     }
     private void updateUI(FirebaseUser user) {
         progressDialog.hide();
         if (user != null) {
+            String loged = user.getEmail();
+            int ind = loged.indexOf("@");
+            int punkt = loged.indexOf(".");
+            String userlogged = loged.substring(0,ind);
 
-            txtStatus.setText(getString(R.string.google_status_fmt, user.getEmail()));
-            txtDetail.setText(getString(R.string.firebase_status_fmt, user.getUid()));
-            findViewById(R.id.detailTxtView).setVisibility(View.VISIBLE);
+            txtStatus.setText(getString(R.string.google_status_fmt,userlogged));
             findViewById(R.id.statusTxtView).setVisibility(View.VISIBLE);
             findViewById(R.id.edtUser).setVisibility(View.GONE);
             findViewById(R.id.edtPass).setVisibility(View.GONE);
@@ -136,10 +148,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             findViewById(R.id.btnSignOut).setVisibility(View.VISIBLE);
         } else {
             txtStatus.setText(R.string.signed_out);
-            txtDetail.setText(null);
 
             findViewById(R.id.btnSignIn).setVisibility(View.VISIBLE);
-            findViewById(R.id.btnSignUp).setVisibility(View.VISIBLE);
             findViewById(R.id.btnSignOut).setVisibility(View.GONE);
         }
     }
@@ -155,16 +165,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.btnSignOut: {
                 signOut();
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
             }
                 break;
+            case R.id.home: {
+                finish();
+            }
         }
         registerUser();
     }
     private void signOut() {
         mAuth.signOut();
-        updateUI(null);
+        finish();
     }
 
 }

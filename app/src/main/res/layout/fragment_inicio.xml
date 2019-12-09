@@ -18,7 +18,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card1"
-            android:layout_width="150dp"
+            android:layout_width="50dp"
             android:layout_height="25dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
@@ -38,8 +38,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card2"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
@@ -58,8 +58,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card3"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
@@ -69,16 +69,16 @@
             app:layout_columnWeight="1"
             app:layout_rowWeight="1">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:src="@drawable/claustro" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/claustro" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card4"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
@@ -88,17 +88,17 @@
             app:layout_columnWeight="1"
             app:layout_rowWeight="1">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/grupos" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/grupos" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card5"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
@@ -108,17 +108,17 @@
             app:layout_columnWeight="1"
             app:layout_rowWeight="1">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/facebook" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/facebook" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card6"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
@@ -128,11 +128,11 @@
             app:layout_columnWeight="1"
             app:layout_rowWeight="1">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/instagram" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/instagram" />
         </androidx.cardview.widget.CardView>
 
     </androidx.gridlayout.widget.GridLayout>

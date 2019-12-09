@@ -43,9 +43,10 @@ public class RVAdapterStudent extends RecyclerView.Adapter<RVAdapterStudent.MyVi
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         String name = data.get(position).getName() + " " + data.get(position).getLastName();
         String job = data.get(position).getJob();
+        int photo = data.get(position).getPhoto();
         holder.txt_Name.setText(name);
         holder.txt_Job.setText(job);
-        holder.photo.setImageResource(data.get(position).getPhoto());
+        holder.photo.setImageResource(photo);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

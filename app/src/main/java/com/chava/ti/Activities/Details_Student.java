@@ -1,6 +1,7 @@
 package com.chava.ti.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ public class Details_Student extends AppCompatActivity implements View.OnClickLi
     private TextView txtName, txtLastName, txtArea, txtMail;
     private ImageView photo;
     private ImageButton mail;
+    Toolbar toolbar;
+    ImageView home, upaep, login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,14 @@ public class Details_Student extends AppCompatActivity implements View.OnClickLi
         txtArea = (TextView) findViewById(R.id.job_Student);
         txtMail = (TextView) findViewById(R.id.mailstudent);
         mail = (ImageButton)findViewById(R.id.btnMail);
+        toolbar = findViewById(R.id.toolbar);
+        home = toolbar.findViewById(R.id.home);
+        upaep = toolbar.findViewById(R.id.upaep);
+        login = toolbar.findViewById(R.id.login_toolbar);
+        login.setVisibility(View.GONE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        home.setOnClickListener(this);
         mail.setOnClickListener(this);
 
 
@@ -45,8 +56,17 @@ public class Details_Student extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getApplicationContext(),Mail.class);
-        intent.putExtra("Para",txtMail.getText().toString());
-        startActivity(intent);
+        int id = v.getId();
+        switch (id){
+            case R.id.btnMail: {
+                Intent intent = new Intent(getApplicationContext(),Mail.class);
+                intent.putExtra("Para",txtMail.getText().toString());
+                startActivity(intent);
+            }
+            break;
+            case R.id.home: {
+                finish();
+            }
+        }
     }
 }
